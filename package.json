@@ -5,10 +5,10 @@
     "dev:server": "live-server",
     "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
     "dev": "run-p dev:*",
-    "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
     "build:js": "standard",
     "build:html": "htmlhint",
-    "build:css": "stylelint",
+    "build:scss": "stylelint 'source/scss/*.scss'",
+    "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
     "build": "run-s build:*",
     "deploy:surge": "surge --project . --domain sassy-project.surge.sh",
     "deploy": "run-s build:* deploy:surge"
